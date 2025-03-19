@@ -1,5 +1,5 @@
 import streamlit as st
-import cv2
+# import cv2
 from pyzbar import pyzbar
 import requests
 import json
@@ -34,21 +34,21 @@ master_url: str = f"https://api.notion.com/v1/databases/{master_database_id}/que
 log_url: str = f"https://api.notion.com/v1/databases/{log_database_id}/query"
 zaiko_url: str = f"https://api.notion.com/v1/databases/{zaiko_database_id}/query"
 
-def read_barcode(image: cv2.typing.MatLike) -> Optional[str]:
-    """
-    画像からバーコードを読み取る関数。
+# def read_barcode(image: cv2.typing.MatLike) -> Optional[str]:
+#     """
+#     画像からバーコードを読み取る関数。
 
-    Args:
-        image: バーコードを含む画像。
+#     Args:
+#         image: バーコードを含む画像。
 
-    Returns:
-        読み取られたバーコードのデータ（文字列）、またはバーコードが読み取れなかった場合はNone。
-    """
-    barcodes = pyzbar.decode(image)
-    for barcode in barcodes:
-        barcode_data = barcode.data.decode("utf-8")
-        return barcode_data
-    return None
+#     Returns:
+#         読み取られたバーコードのデータ（文字列）、またはバーコードが読み取れなかった場合はNone。
+#     """
+#     barcodes = pyzbar.decode(image)
+#     for barcode in barcodes:
+#         barcode_data = barcode.data.decode("utf-8")
+#         return barcode_data
+#     return None
 
 def confirm_product(
         product_id: str, 
